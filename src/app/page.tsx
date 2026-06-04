@@ -15,7 +15,7 @@ export default async function Landing() {
       {/* Nav */}
       <nav className="sticky top-0 z-20 border-b border-[var(--line)]/60 bg-[var(--bg)]/80 backdrop-blur">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4">
-          <span className="font-display text-lg font-extrabold tracking-tight">⚽ BANTER&nbsp;LEAGUE</span>
+          <span className="font-display text-lg font-extrabold tracking-tight">⚽ Banter&nbsp;League</span>
           <Link href={cta} className="btn-ghost px-4 py-2 text-sm">
             {user ? "Dashboard" : "Sign in"}
           </Link>
@@ -27,7 +27,7 @@ export default async function Landing() {
         <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-[var(--line-hi)] bg-[var(--card)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">
           <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" /> NEW GAMEWEEK EVERY WEEKEND
         </span>
-        <h1 className="font-display text-4xl font-extrabold uppercase leading-[1.02] tracking-tight sm:text-6xl">
+        <h1 className="font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl">
           Turn the group chat into a{" "}
           <span className="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] bg-clip-text text-transparent">
             prediction arena
@@ -98,7 +98,7 @@ export default async function Landing() {
         ].map((f) => (
           <div key={f.title} className="card p-5">
             <div className="text-2xl">{f.icon}</div>
-            <h3 className="font-display mt-3 text-lg font-bold uppercase tracking-tight">{f.title}</h3>
+            <h3 className="font-display mt-3 text-lg font-bold tracking-tight">{f.title}</h3>
             <p className="mt-1.5 text-sm text-[var(--muted)]">{f.body}</p>
           </div>
         ))}
@@ -106,7 +106,7 @@ export default async function Landing() {
 
       {/* How scoring works */}
       <section className="mx-auto w-full max-w-4xl px-5 py-10">
-        <h2 className="font-display text-center text-2xl font-extrabold uppercase sm:text-3xl">
+        <h2 className="font-display text-center text-2xl font-extrabold sm:text-3xl">
           Rack up the points
         </h2>
         <p className="mx-auto mt-2 max-w-xl text-center text-sm text-[var(--muted)]">
@@ -137,7 +137,7 @@ export default async function Landing() {
           ].map((c) => (
             <div key={c.name} className="card p-4 text-center">
               <div className="text-3xl">{c.icon}</div>
-              <p className="font-display mt-2 font-bold uppercase">{c.name}</p>
+              <p className="font-display mt-2 font-bold">{c.name}</p>
               <p className="mt-1 text-xs text-[var(--muted)]">{c.desc}</p>
             </div>
           ))}
@@ -146,7 +146,7 @@ export default async function Landing() {
 
       {/* Weekly sprint timeline */}
       <section className="mx-auto w-full max-w-3xl px-5 py-10">
-        <h2 className="font-display text-center text-2xl font-extrabold uppercase sm:text-3xl">The weekly sprint</h2>
+        <h2 className="font-display text-center text-2xl font-extrabold sm:text-3xl">The weekly sprint</h2>
         <ol className="mt-8 grid gap-4">
           {[
             { day: "TUE", text: "Fixtures drop into the group automatically." },
@@ -166,12 +166,12 @@ export default async function Landing() {
 
       {/* Leaderboard preview */}
       <section className="mx-auto w-full max-w-2xl px-5 py-10">
-        <h2 className="font-display mb-5 text-center text-2xl font-extrabold uppercase sm:text-3xl">
+        <h2 className="font-display mb-5 text-center text-2xl font-extrabold sm:text-3xl">
           Climb the table
         </h2>
         <div className="paper">
           <div className="flex items-center justify-between bg-[var(--paper-ink)] px-4 py-3 text-white">
-            <span className="font-display text-sm font-extrabold">STANDINGS</span>
+            <span className="font-display text-sm font-extrabold">Standings</span>
             <span className="text-[11px] font-bold uppercase tracking-wider text-[var(--accent)]">Classic league</span>
           </div>
           {[
@@ -196,7 +196,7 @@ export default async function Landing() {
 
       {/* FAQ */}
       <section className="mx-auto w-full max-w-2xl px-5 py-10">
-        <h2 className="font-display mb-6 text-center text-2xl font-extrabold uppercase sm:text-3xl">FAQ</h2>
+        <h2 className="font-display mb-6 text-center text-2xl font-extrabold sm:text-3xl">FAQ</h2>
         <div className="grid gap-3">
           {[
             ["Is it really free?", "Yes — Banter League is free to play. Create a league, invite your group, predict every week. No card, no catch."],
@@ -214,7 +214,7 @@ export default async function Landing() {
 
       {/* Final CTA */}
       <section className="mx-auto w-full max-w-3xl px-5 py-16 text-center">
-        <h2 className="font-display text-3xl font-extrabold uppercase leading-tight sm:text-4xl">
+        <h2 className="font-display text-3xl font-extrabold leading-tight sm:text-4xl">
           Your group is one gameweek away from chaos.
         </h2>
         <Link href={cta} className="btn-primary mt-7 inline-block px-8 py-4 text-base uppercase tracking-wide">

@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+:root {
+  /* Deep charcoal (a shade of black) + neon green, with light tables */
+  --bg: #0b0c0f;
+  --bg-2: #060708;
+  --card: #14161b;
+  --card-hi: #1b1e24;
+  --line: #24272f;
+  --line-hi: #343843;
+  --muted: #9aa1ad;
+  --text: #f1f3f5;
+  --accent: #00e676; /* neon green */
+  --accent-2: #19d3a2; /* teal-green */
+  --accent-ink: #0a0d0c; /* ink on accent */
+  --magenta: #ff3b6b; /* live indicator */
+  /* Light "paper" surface for standings/leaderboard tables */
+  --paper: #ffffff;
+  --paper-2: #eef0f3;
+  --paper-ink: #1c1e24;
+  --paper-muted: #6a7280;
+}
+
+html {
+  background: var(--bg);
+  color-scheme: dark;
+}
+
+body {
+  color: var(--text);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  /* Deep charcoal with a faint green glow up top */
+  background:
+    radial-gradient(900px 480px at 85% -12%, rgba(0, 230, 118, 0.07), transparent 60%),
+    linear-gradient(180deg, #121317 0%, var(--bg) 42%, var(--bg-2) 100%);
+  background-attachment: fixed;
+}
+
+.font-display {
+  font-family: var(--font-display), var(--font-sans), sans-serif;
+  letter-spacing: 0;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* ---- Reusable bits ---- */
+.card {
+  background: linear-gradient(180deg, var(--card-hi), var(--card));
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+}
+
+/* White high-contrast surface for FPL-style standings tables */
+.paper {
+  background: var(--paper);
+  color: var(--paper-ink);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 40px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* The neon points pill (FPL's signature green points chip) */
+.pts-pill {
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 800;
+  border-radius: 0.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, var(--accent), #00d973);
+  color: var(--accent-ink);
+  font-weight: 800;
+  border-radius: 0.85rem;
+  box-shadow: 0 8px 24px -8px rgba(0, 255, 135, 0.55);
+  transition: transform 0.08s ease, filter 0.15s ease, opacity 0.15s ease;
+}
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+.btn-primary:active {
+  transform: translateY(1px);
+}
+.btn-primary:disabled {
+  opacity: 0.6;
+}
+
+.btn-ghost {
+  border: 1px solid var(--line-hi);
+  border-radius: 0.85rem;
+  color: var(--text);
+  font-weight: 600;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--accent);
+  background: rgba(31, 216, 122, 0.06);
+}
+
+.field {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.field:focus {
+  border-color: var(--accent);
+}
+
+/* ---- Animations ---- */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-rise {
+  animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-float-up {
+  animation: float-up 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
